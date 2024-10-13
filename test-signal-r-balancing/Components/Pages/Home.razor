@@ -1,0 +1,44 @@
+﻿@page "/"
+@using TestSignalRBalancing
+@inject CounterService Counter
+
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Server: @Environment.GetEnvironmentVariable("SERVER_NAME")</h1>
+<h5>Current counter: </h5>
+
+<input type="number" value="@CurrentCounter" @oninput="CounterChanged"/>
+<button class="btn btn-primary @(changed ? "" : "disabled")" @onclick="SaveCounter">Save</button>
+
+@code {
+    private bool changed = false;
+    private string? InputValue { get; set; }
+
+    protected override void OnInitialized()
+    {
+        CurrentCounter = Counter.Counter;
+    }
+
+    private void CounterChanged(ChangeEventArgs args)
+    {
+        if (string.IsNullOrEmpty(args.Value.ToString()))
+        {
+            changed = false;
+        }
+        else
+        {
+            CurrentCounter = int.Parse(args.Value.ToString());
+            changed = CurrentCounter != Counter.Counter;
+        }
+    }
+
+    private int CurrentCounter { get; set; }
+
+    private void SaveCounter()
+    {
+        Counter.Counter = CurrentCounter;
+        changed = false;
+    }
+}

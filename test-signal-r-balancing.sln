@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test-signal-r-balancing", "test-signal-r-balancing\test-signal-r-balancing.csproj", "{B888B932-9FE7-4BFA-83A4-5B086CB7E6E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B888B932-9FE7-4BFA-83A4-5B086CB7E6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B888B932-9FE7-4BFA-83A4-5B086CB7E6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B888B932-9FE7-4BFA-83A4-5B086CB7E6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B888B932-9FE7-4BFA-83A4-5B086CB7E6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2487157-4D6F-4A1B-B4BD-D41849464AB8}
+	EndGlobalSection
+EndGlobal

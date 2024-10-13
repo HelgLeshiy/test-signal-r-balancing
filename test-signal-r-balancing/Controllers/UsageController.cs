@@ -12,14 +12,18 @@ namespace TestSignalRBalancing.Controllers
         public IActionResult GetUsage()
         {
             int counter = counterService_.Counter;
+            string metric;
             if(counter > 7200.0)
             {
-                return Ok("up 0%\n");
+                metric = "up 0%\n";
             }
             else
             {
-                return Ok("up " + ((int)Math.Floor(100 * ( 1.0 - counter / 7200.0 ))).ToString() + "%\n");
+                metric = "up " + ((int)Math.Floor(100 * (1.0 - counter / 7200.0))).ToString() + "%\n";
             }
+
+            Console.WriteLine($"Get Usage from {Environment.GetEnvironmentVariable("SERVER_NAME")}: {metric}");
+            return Ok(metric);
         }
     }
 }

@@ -3,7 +3,7 @@
 namespace TestSignalRBalancing.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("/")]
     public class UsageController(CounterService counterService) : Controller
     {
         private CounterService counterService_ = counterService;
